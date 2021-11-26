@@ -14,6 +14,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'majutsushi/tagbar'
+Plug 'alvan/vim-closetag'
 call plug#end()
 "
 " ------------------------------------------------------------------------------
@@ -30,7 +31,7 @@ set incsearch
 " Highlight searched
 set hlsearch
 " While screen is small don't go to next line
-set nowrap
+"set nowrap
 " Enable syntax colorization based on the colorscheme
 syntax on
 " Enable filetype for commands below
@@ -59,6 +60,15 @@ autocmd filetype sh :set tabstop=4 shiftwidth=4 autoindent smartindent
 autocmd filetype text: set textwidth=100
 " End of settings for TEXT
 "
+" The following is set for CSS rules file
+autocmd filetype css :set tabstop=8 shiftwidth=8
+autocmd filetype css :set autoindent smartindent
+" End of settings for CSS
+"
+" The following is set for HTML file
+autocmd filetype html :set tabstop=4 shiftwidth=4
+autocmd filetype html :set autoindent smartindent
+"
 " Show status bar, optional
 set laststatus=2
 " Set status as git status (branch), optional
@@ -73,8 +83,9 @@ nnoremap <M-h> <C-w>h
 nnoremap <M-l> <C-w>l
 "
 set cursorline
+set cursorcolumn
 set termguicolors
-let ayucolor="mirage"
+let ayucolor="dark"
 set background=dark
 colorscheme ayu
 "
@@ -84,7 +95,7 @@ colorscheme ayu
 " AIRLINE THEMES SETTINGS
 " ------------------------------------------------------------------------------
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'apprentice'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
